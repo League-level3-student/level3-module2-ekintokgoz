@@ -61,7 +61,13 @@ public class _01_SortedArrayChecker {
 	 */
 
 	public static boolean stringArraySorted(String[] arr) {
-		return false;
+		for (int k = 0; k < arr.length - 1; k++) {
+			if(arr[k].compareTo(arr[k+1]) > 0) {
+				return false;
+			}
+		}
+		
+		return true;
 		
 	}
 }
