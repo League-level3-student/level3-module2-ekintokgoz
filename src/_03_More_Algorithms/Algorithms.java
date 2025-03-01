@@ -12,12 +12,20 @@ public class Algorithms {
 		String sums = String.valueOf(sum);
 		String numOne = String.valueOf(num1);
 		String numTwo = String.valueOf(num2);
-		
-		return null ;
+		String result = (numOne + " x " + numTwo + " = " + sums);
+		return result;
 	}
 
 	public static int findBrokenEgg(List<String> eggs) {
-		return 0;
+		int broken = 0;
+		for(int i = 0; i < eggs.size(); i++) {
+			if(eggs.get(i).equals("cracked")) {
+				broken = i;
+				break;
+			}
+		}
+
+		return broken;
 	}
 
 	public static boolean isPrime(int num) {
@@ -29,9 +37,67 @@ public class Algorithms {
 		}
 		return true;
 	}
-	
+
 	public static boolean isSquare(int num) {
+		int sqrt = (int) Math.sqrt(num);
+		if(sqrt * sqrt == num) {
+			return true;
+		}		
 		return false;
 	}
+
+	public static boolean isCube(int num) {
+		int cube = (int) Math.cbrt(num);
+		if(cube * cube * cube == num) {
+			return true;
+		}
+		return false;
+	}
+	
+	public static int countPearls(List<Boolean> pearls) {
+		int numPearls = 0;
+		
+		for(int i = 0; i < pearls.size(); i++) {
+			if(pearls.get(i)) {
+				numPearls += 1;
+			}
+		}	
+		
+		return numPearls;
+	}
+	
+	public static double findTallest(List<Double> peeps) {
+		double tallest = 0;
+		
+		for(int i = 0; i < peeps.size(); i++) {
+			if(peeps.get(i) > tallest) {
+				tallest = peeps.get(i);
+			}
+		}
+		
+		return tallest;
+	}
+	
+	public static String findLongestWord(List<String> words) {
+		String longest = "";
+		
+		for(int i = 0; i < words.size(); i++) {
+			if(words.get(i).length() > longest.length()) {
+				longest = words.get(i);
+			}
+		}
+		return longest;
+	}
+	
+	public static boolean containsSOS(List<String> message) {
+		String sos = "... --- ...";
+		if(message.contains(sos)) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	
 
 }
